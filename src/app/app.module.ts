@@ -14,6 +14,8 @@ import { HistoryComponent } from './history/history.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { CompleteRegistrationComponent } from './complete-registration/complete-registration.component';
+import { StudentComponent } from './student/student.component';
+import { TicketComponent } from './ticket/ticket.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { CompleteRegistrationComponent } from './complete-registration/complete-
     DashboardComponent,
     DashboardLayoutComponent,
     HistoryComponent,
-    CompleteRegistrationComponent
+    CompleteRegistrationComponent,
+    StudentComponent,
+    TicketComponent
   ],
   imports: [
     BrowserModule,
