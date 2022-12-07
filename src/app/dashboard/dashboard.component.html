@@ -1,2 +1,30 @@
-<p>dashboard works!</p>
-<app-dashboard-layout></app-dashboard-layout>
+<div  class="container" >
+  <div class="row" >
+    <div class="2"></div>
+    <div class="10">
+      <h3 class="mt-5">Book Ticket</h3>
+      <table class="table mt-5">
+        <thead>
+        <tr>
+          <th scope="col">S/N</th>
+          <th scope="col">From</th>
+          <th scope="col">To</th>
+          <th scope="col">Time</th>
+        </tr>
+        </thead>
+        <tbody  >
+        <tr *ngFor="let book of books; index as i; first as isFirst">
+          <th scope="row"> {{i + 1}} </th>
+          <td>{{book. from}}</td>
+          <td>{{book. to}}</td>
+          <td>{{book. time}}</td>
+          <td>
+            <button class="btn btn-primary btn-sm" type="button">Book</button> </td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+    <div class="2"></div>
+  </div>
+</div>
