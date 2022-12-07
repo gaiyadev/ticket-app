@@ -1,0 +1,42 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4"></div>
+<!--    -->
+    <div class="col-md-4">
+      <div class="card mt-5">
+        <div class="card-body">
+          <h4 class="text-danger text-center"> {{ errorMessage ? errorMessage :'' }} </h4>
+
+          <form (ngSubmit)="submitHandler(form)" #myForm = 'ngForm'>
+            <h2 class="mb-3 mt-0">Login</h2>
+            <div>
+              <label for="regNumber" class="form-label">Registration Number</label>
+              <input type="text"   [(ngModel)]="form.regNumber" #regNumber="ngModel"  required class="form-control" name="regNumber" id="regNumber" placeholder="CST/18/COM/00192">
+            </div>
+<!--            -->
+            <div *ngIf="regNumber.invalid && (regNumber.dirty || regNumber.touched)" class="pt-1">
+              <p *ngIf="regNumber.errors?.['required']"  class="text-danger" >
+                Reg Number is required.
+              </p>
+            </div>
+<!--            -->
+            <div class="mt-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password"  [(ngModel)]="form.password" #password="ngModel"  required class="form-control" name="password" id="password">
+            </div>
+            <div *ngIf="password.invalid && (password.dirty || password.touched)" class="pt-1">
+              <p *ngIf="password.errors?.['required']"  class="text-danger" >
+                Password is required.
+              </p>
+            </div>
+            <!--      btn-->
+            <button type="submit" [disabled]="myForm.form.invalid"  name="submit" class="btn btn-primary mt-3"> {{ loading ? 'Submitting' : 'Login'}}  </button>
+          </form>
+        </div>
+      </div>
+    </div>
+<!--    -->
+    <div class="col-md-4"></div>
+  </div>
+</div>

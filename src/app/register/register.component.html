@@ -1,0 +1,30 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <!--    -->
+    <div class="col-md-4">
+      <div class="card mt-5">
+        <div class="card-body">
+          <h3 class="text-danger text-center"> {{ errorMessage ? errorMessage :'' }} </h3>
+
+          <form  (ngSubmit)="submitHandler(form)">
+            <h2 class="mb-3 mt-0">Search</h2>
+            <div>
+              <label for="regNumber" class="form-label">Reg.Number</label>
+              <input type="text"  [(ngModel)]="form.regNumber" #regNumber="ngModel"  required class="form-control" name="regNumber" id="regNumber" placeholder="CST/18/COM/00192">
+            </div>
+            <div *ngIf="regNumber.invalid && (regNumber.dirty || regNumber.touched)" class="pt-1">
+              <p *ngIf="regNumber.errors?.['required']"  class="text-danger" >
+                Reg Number is required.
+              </p>
+            </div>
+            <button type="submit" name="submit" class="btn btn-primary mt-2"> {{ loading ? 'Submitting' : 'Search'}}  </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--    -->
+    <div class="col-md-4"></div>
+  </div>
+</div>
