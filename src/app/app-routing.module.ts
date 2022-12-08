@@ -7,6 +7,7 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
 import {DashboardLayoutComponent} from "./dashboard-layout/dashboard-layout.component";
 import {HistoryComponent} from "./history/history.component";
 import {CompleteRegistrationComponent} from "./complete-registration/complete-registration.component";
+import {AuthGuardGuard} from "./guards/authguard.guard";
 
 const routes: Routes = [
   {
@@ -27,7 +28,8 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
-    title: "Dashboard"
+    title: "Dashboard",
+    canActivate: [AuthGuardGuard],
   },
   {
     path: 'registration/:id',
