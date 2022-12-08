@@ -44,8 +44,6 @@ export class AddStudentComponent implements OnInit {
 
   errorMessage: string = ''
 
-
-
   submitHandler(form: User) {
     this.addStudentService.submitHandler(form)
       .subscribe({

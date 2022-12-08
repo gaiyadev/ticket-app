@@ -11,6 +11,7 @@ import {AuthGuardGuard} from "./guards/authguard.guard";
 import {StudentComponent} from "./student/student.component";
 import {TicketComponent} from "./ticket/ticket.component";
 import {AddStudentComponent} from "./add-student/add-student.component";
+import {WalletComponent} from "./wallet/wallet.component";
 
 const routes: Routes = [
   {
@@ -61,6 +62,12 @@ const routes: Routes = [
     path: 'ticket',
     component: TicketComponent,
     title: "Ticket",
+    canActivate: [AuthGuardGuard],
+  },
+  {
+    path: 'wallet',
+    component: WalletComponent,
+    title: "wallet",
     canActivate: [AuthGuardGuard],
   },
   // {

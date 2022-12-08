@@ -16,8 +16,11 @@
           Hi,  {{email()}}
           </a>
           <ul class="dropdown-menu">
-            <li *ngIf="!isAdmin()"  class="" ><a class="dropdown-item" href="#">Wallet</a></li>
-            <li *ngIf="!isAdmin()"><a class="dropdown-item" href="#">History</a></li>
+<!--            <li *ngIf="!isAdmin()"  class="" ><a class="dropdown-item" href="#"></a></li>-->
+            <li  *ngIf="!isAdmin()"><a class= "dropdown-item" href="#" routerLink="/wallet">Wallet</a></li>
+
+<!--            <li *ngIf="!isAdmin()"><a class="dropdown-item" href="#"></a></li>-->
+            <li  *ngIf="!isAdmin()"><a class= "dropdown-item" href="#" routerLink="/history">Transaction History</a></li>
 
             <li  *ngIf="isAdmin()"><a class= "dropdown-item" href="#" routerLink="/student">Student</a></li>
 

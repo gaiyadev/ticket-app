@@ -17,6 +17,7 @@ import { CompleteRegistrationComponent } from './complete-registration/complete-
 import { StudentComponent } from './student/student.component';
 import { TicketComponent } from './ticket/ticket.component';
 import { AddStudentComponent } from './add-student/add-student.component';
+import { WalletComponent } from './wallet/wallet.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AddStudentComponent } from './add-student/add-student.component';
     CompleteRegistrationComponent,
     StudentComponent,
     TicketComponent,
-    AddStudentComponent
+    AddStudentComponent,
+    WalletComponent
   ],
   imports: [
     BrowserModule,

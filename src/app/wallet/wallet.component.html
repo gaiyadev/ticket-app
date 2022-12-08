@@ -1,0 +1,35 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <!--    -->
+    <div class="col-md-4">
+      <h4 class="my-4">Balance: &#8358; {{walletBalance}}.00</h4>
+
+      <div class="card mt-5">
+        <div class="card-body">
+          <h4 class="text-danger text-center"> {{ errorMessage ? errorMessage :'' }} </h4>
+          <form (ngSubmit)="submitHandler(form)" #myForm = 'ngForm'>
+            <h2 class="mb-3 mt-0">Add Fund</h2>
+            <div>
+              <label for="amount" class="form-label">Amount</label>
+              <input type="number"   [(ngModel)]="form.amount" #amount="ngModel"  required class="form-control" name="amount" id="amount" placeholder="6000">
+            </div>
+            <!--            -->
+            <div *ngIf="amount.invalid && (amount.dirty || amount.touched)" class="pt-1">
+              <p *ngIf="amount.errors?.['required']"  class="text-danger" >
+                amount is required.
+              </p>
+            </div>
+            <!--            -->
+
+            <!--      btn-->
+            <button type="submit" [disabled]="myForm.form.invalid"  name="submit" class="btn btn-primary mt-3"> {{ loading ? 'Submitting' : 'Add Fund'}}  </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--    -->
+    <div class="col-md-4"></div>
+  </div>
+</div>
