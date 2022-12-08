@@ -22,7 +22,10 @@ export class DashboardComponent implements OnInit {
   loading: boolean =false
   books: any = []
 
-
+  isAdmin(): any{
+    const user: any = localStorage.getItem('appData')
+    return  JSON.parse(user).isAdmin
+  }
   getBooks(): void{
     this.loading = true
     this.dashboardService.getBooks()

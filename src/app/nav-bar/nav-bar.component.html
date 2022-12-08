@@ -25,6 +25,7 @@
             <li  *ngIf="isAdmin()"><a class= "dropdown-item" href="#" routerLink="/student">Student</a></li>
 
             <li *ngIf="isAdmin()"><a class="dropdown-item" href="#">Tickets</a></li>
+            <li *ngIf="isAdmin()"><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
 
             <li><hr class="dropdown-divider"></li>
             <li (click)="logout()" ><a class="dropdown-item" href="#">Logout</a></li>

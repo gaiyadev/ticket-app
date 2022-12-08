@@ -12,7 +12,6 @@ export class LoginService {
 
   submitHandler(form: any) : Observable<any>{
     return this.http.post<any>(`${environment.baseUrl}/users/signin`, form);
-
   }
 
   isAuthenticated(): any {

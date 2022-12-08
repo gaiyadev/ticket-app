@@ -59,7 +59,7 @@ const routes: Routes = [
     canActivate: [AuthGuardGuard],
   },
   {
-    path: 'ticket',
+    path: 'add-ticket',
     component: TicketComponent,
     title: "Ticket",
     canActivate: [AuthGuardGuard],

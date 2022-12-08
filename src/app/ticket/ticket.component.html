@@ -1,1 +1,53 @@
-<p>ticket works!</p>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <!--    -->
+    <div class="col-md-4">
+      <div class="card mt-5">
+        <div class="card-body">
+          <h4 class="text-danger text-center"> {{ errorMessage ? errorMessage :'' }} </h4>
+
+          <form (ngSubmit)="submitHandler(form)" #myForm = 'ngForm'>
+            <h2 class="mb-3 mt-0">Add Ticket</h2>
+            <div>
+              <label for="from" class="form-label">From Where</label>
+              <input type="text"   [(ngModel)]="form.from" #from="ngModel"  required class="form-control" name="from" id="from" placeholder="Main camp">
+            </div>
+            <!--            -->
+            <div *ngIf="from.invalid && (from.dirty || from.touched)" class="pt-1">
+              <p *ngIf="from.errors?.['required']"  class="text-danger" >
+                from is required.
+              </p>
+            </div>
+            <!--            -->
+            <div class="mt-3">
+              <label for="to" class="form-label">To Where</label>
+              <input type="text"  [(ngModel)]="form.to" #to="ngModel"  required class="form-control" name="to" id="to" placeholder="other camp">
+            </div>
+            <div *ngIf="to.invalid && (to.dirty || to.touched)" class="pt-1">
+              <p *ngIf="to.errors?.['required']"  class="text-danger" >
+                To is required.
+              </p>
+            </div>
+
+<!--            -->       <div class="mt-3">
+            <label for="time" class="form-label">Time</label>
+            <input type="time"  [(ngModel)]="form.time" #time="ngModel"  required class="form-control" name="to" id="time"  placeholder="3000: pm"  >
+          </div>
+            <div *ngIf="time.invalid && (time.dirty || time.touched)" class="pt-1">
+              <p *ngIf="to.errors?.['required']"  class="text-danger" >
+                Time is required.
+              </p>
+            </div>
+
+            <!--      btn-->
+            <button type="submit" [disabled]="myForm.form.invalid"  name="submit" class="btn btn-primary mt-3"> {{ loading ? 'Submitting' : 'Add'}}  </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--    -->
+    <div class="col-md-4"></div>
+  </div>
+</div>

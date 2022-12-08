@@ -2,7 +2,11 @@
   <div class="row" >
     <div class="2"></div>
     <div class="10">
-      <h3 class="mt-5">Book Ticket</h3>
+
+      <h3 class="mt-5"  *ngIf="!isAdmin()"> Book Tickets </h3>
+      <h3 class="mt-5"  *ngIf="isAdmin()"> Available Tickets </h3>
+      <h6 class="text-primary my-3" style="text-decoration: underline"><a   href="#" class="nav-link" routerLink="/add-ticket">Add Ticket</a></h6>
+
       <table class="table mt-5">
         <thead>
         <tr>
@@ -18,7 +22,7 @@
           <td>{{book. from}}</td>
           <td>{{book. to}}</td>
           <td>{{book. time}}</td>
-          <td>
+          <td *ngIf="!isAdmin()">
             <button class="btn btn-primary btn-sm" type="button">Book</button> </td>
         </tr>
 
