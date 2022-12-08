@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DashboardService} from "./dashboard.service";
+import {LoginService} from "../login/login.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -8,7 +9,11 @@ import {DashboardService} from "./dashboard.service";
 })
 export class DashboardComponent implements OnInit {
 
-  constructor( private readonly dashboardService: DashboardService) { }
+  constructor(
+    private readonly dashboardService: DashboardService,
+    private readonly loginService:LoginService
+  )
+  { }
 
   ngOnInit(): void {
     this.getBooks()
@@ -36,5 +41,9 @@ export class DashboardComponent implements OnInit {
           console.log('Done fetching data')
         }
       });
+  }
+
+  logout(){
+    return this.loginService.logout()
   }
 }

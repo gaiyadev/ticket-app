@@ -35,16 +35,14 @@ export class LoginComponent implements OnInit {
       .subscribe({
         next: (response) => {
           this.loading = false
-          console.log(response.accessToken)
           localStorage.setItem('accessToken', response.accessToken)
-          const id = response.id
+          localStorage.setItem('appData', JSON.stringify(response.data))
           if(response.accessToken) {
             this.router.navigate([`dashboard`]);
           }
         },
         error: (error) => {
           console.log('error er', error.error.message);
-
           this.errorMessage = error.error.message
           this.loading = false
         },
@@ -52,6 +50,11 @@ export class LoginComponent implements OnInit {
           this.loading = false
           console.log('Done fetching data')
         }
-      });  }
+      });
+  }
 
+
+  logout(){
+    return this.loginService.logout()
+  }
 }

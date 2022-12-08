@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import {Observable} from "rxjs";
@@ -16,8 +16,20 @@ export class LoginService {
   }
 
   isAuthenticated(): any {
-    return localStorage.getItem('accessToken');
-
+     return localStorage.getItem('accessToken')
   }
+
+  logout(){
+  return localStorage.clear()
+  }
+
+//   isAdmin(): any{
+//     const user: any = localStorage.getItem('appData')
+//     console.log(">>>",JSON.parse(user).isAdmin)
+//     if(JSON.parse(user).isAdmin != true) {
+//       return
+//     }
+// return true
+//   }
 
 }

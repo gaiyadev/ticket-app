@@ -8,6 +8,9 @@ import {DashboardLayoutComponent} from "./dashboard-layout/dashboard-layout.comp
 import {HistoryComponent} from "./history/history.component";
 import {CompleteRegistrationComponent} from "./complete-registration/complete-registration.component";
 import {AuthGuardGuard} from "./guards/authguard.guard";
+import {StudentComponent} from "./student/student.component";
+import {TicketComponent} from "./ticket/ticket.component";
+import {AddStudentComponent} from "./add-student/add-student.component";
 
 const routes: Routes = [
   {
@@ -32,9 +35,33 @@ const routes: Routes = [
     canActivate: [AuthGuardGuard],
   },
   {
+    path: 'history',
+    component: HistoryComponent,
+    title: "History",
+    canActivate: [AuthGuardGuard],
+  },
+  {
     path: 'registration/:id',
     component: CompleteRegistrationComponent,
     title: "Registration"
+  },
+  {
+    path: 'student',
+    component: StudentComponent,
+    title: "Student",
+    canActivate: [AuthGuardGuard],
+  },
+  {
+    path: 'add-student',
+    component: AddStudentComponent,
+    title: "Add Student",
+    canActivate: [AuthGuardGuard],
+  },
+  {
+    path: 'ticket',
+    component: TicketComponent,
+    title: "Ticket",
+    canActivate: [AuthGuardGuard],
   },
   // {
   //   path: 'dashboard',

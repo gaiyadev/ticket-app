@@ -1,1 +1,49 @@
-<p>student works!</p>
+<div  class="container" >
+  <div class="row" >
+    <div class="2"></div>
+    <div class="10">
+      <h3 class="mt-5">Students</h3>
+      <a  href="#" class="nav-link" style="color:  navy" routerLink="/add-student">Add Student</a>
+<!--      <li><a class="nav-link text-white" routerLink="login">Login</a></li>-->
+
+      <table class="table mt-5">
+        <thead>
+        <tr>
+          <th scope="col">S/N</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">MiddleName</th>
+          <th scope="col">regNumber</th>
+          <th scope="col">email</th>
+          <th scope="col">department</th>
+          <th scope="col">faculty</th>
+          <th scope="col">course</th>
+          <th scope="col">level</th>
+          <th scope="col">course</th>
+<!--          <th scope="col">createdAt</th>-->
+        </tr>
+        </thead>
+        <tbody  >
+        <tr *ngFor="let student of students; index as i; first as isFirst">
+          <th scope="row"> {{i + 1}} </th>
+          <td>{{student.firstName}}</td>
+          <td>{{student.lastName}}</td>
+          <td>{{student. middleName}}</td>
+          <td>{{student. reqNumber}}</td>
+          <td>{{student. email}}</td>
+          <td>{{student. department}}</td>
+          <td>{{student. faculty}}</td>
+          <td>{{student. course}}</td>
+          <td>{{student. faculty}}</td>
+          <td>{{student. level}}L</td>
+<!--          <td>{{student. createdAt}}</td>-->
+<!--          <td>-->
+<!--            <button class="btn btn-primary btn-sm" type="button">Book</button> </td>-->
+<!--        </tr>-->
+
+        </tbody>
+      </table>
+    </div>
+    <div class="2"></div>
+  </div>
+</div>

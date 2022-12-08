@@ -16,6 +16,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { CompleteRegistrationComponent } from './complete-registration/complete-registration.component';
 import { StudentComponent } from './student/student.component';
 import { TicketComponent } from './ticket/ticket.component';
+import { AddStudentComponent } from './add-student/add-student.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { TicketComponent } from './ticket/ticket.component';
     HistoryComponent,
     CompleteRegistrationComponent,
     StudentComponent,
-    TicketComponent
+    TicketComponent,
+    AddStudentComponent
   ],
   imports: [
     BrowserModule,
