@@ -1,0 +1,46 @@
+.image-link {
+  display: flex;
+  align-items: center;
+  height: 80vh;
+  padding: 50px;
+}
+
+.logo {
+  padding: 15px;
+  margin-left: 40%;
+}
+
+
+.custom-btn {
+  background-color: #08A7FD !important;
+  border-color: #08A7FD;
+  width: 100%;
+}
+.custom-btn:hover {
+  background-color: #08A7FD;
+  border-color: #08A7FD;
+}
+
+.h3-text-grey,  .p-text-grey{
+  color: #929292;
+}
+input[type="text"] , input[type="password"]{
+  width: 100%;
+}
+
+.station {
+  color: #fff;
+  font-size: 12px;
+}
+.hero {
+  color: #fff;
+}
+
+.form-body {
+  width: 80%;
+  margin: auto;
+}
+
+.errors {
+  font-size: 12px;
+}
