@@ -4,6 +4,7 @@ interface User {
   from: string
   to: string
   time: string
+  price: string
 }
 @Component({
   selector: 'app-ticket',
@@ -19,25 +20,28 @@ export class TicketComponent implements OnInit {
   form: User= {
     from: '',
     to: '',
-    time: ''
+    time: '',
+    price: ''
   }
   loading: boolean = false
 
 
   errorMessage: string = ''
+  successMessage: string = ''
   submitHandler(form: any){
 
     this.loading = true
     this.ticketService.submitHandler(form)
       .subscribe({
         next: (response) => {
-          console.log(response)
           this.loading = false
-          alert('Added successfully')
+          this.errorMessage = ''
+          this.successMessage = 'Added successfully'
         },
         error: (error) => {
           console.log('error er', error.error.message);
           this.errorMessage = error.error.message
+          this.successMessage = '';
           this.loading = false
         },
         complete: () => {

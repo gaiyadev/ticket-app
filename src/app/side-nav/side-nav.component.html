@@ -1,10 +1,10 @@
 <nav class="nav flex-column sidebar">
-<!--  <a class="nav-link links" href="#"></a>-->
-  <li><a class="nav-link links text-white" routerLink="/dashboard">Dashboard</a></li>
-  <a class="nav-link links" href="#"></a>
-  <li><a class="nav-link links text-white" routerLink="/student">Students</a></li>
-  <a class="nav-link " href="#"></a>
-  <li><a class="nav-link links text-white" routerLink="/tickets">Tickets</a></li>
-  <li><a class="nav-link links text-white" routerLink="/dashboard">Bookings</a></li>
-  <!--  <li><a class="nav-link links text-white" routerLink="register">Register</a></li>-->
+    <li *ngIf="isAdmin()"><a class="nav-link links text-white" routerLink="/dashboard">Dashboard</a></li>
+    <a class="nav-link links" href="#"></a>
+    <li  *ngIf="isAdmin()"><a class="nav-link links text-white" routerLink="/student">Students</a></li>
+    <a class="nav-link " href="#"></a>
+    <li><a class="nav-link links text-white" routerLink="/tickets">Tickets</a></li>
+    <li  *ngIf="isAdmin()"><a class="nav-link links text-white" routerLink="/dashboard">Bookings</a></li>
+    <li  *ngIf="!isAdmin()"><a class="nav-link links text-white" routerLink="/wallet">Wallet</a></li>
+    <li  *ngIf="!isAdmin()"><a class="nav-link links text-white" routerLink="/history">Transactions</a></li>
 </nav>

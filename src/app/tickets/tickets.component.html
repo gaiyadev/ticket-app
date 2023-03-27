@@ -4,12 +4,17 @@
       <app-side-nav></app-side-nav>
     </div>
     <div class="col-md-8" >
+      <div class="card-body" style="margin-left: -200px">
       <h3 class="mt-5"  *ngIf="!isAdmin()"> Book Tickets </h3>
       <h3 class="mt-5"  *ngIf="isAdmin()"> Available Tickets </h3>
-<!--      <h6 class="text-primary my-3" style="text-decoration: underline"><a   href="#" class="nav-link" routerLink="/add-ticket">Add Ticket</a></h6>-->
-      <a  routerLink="/add-ticket"  type="button" class="btn btn-primary text-white mb-5 mt-5" style="color: #08A7FD; float: left; ">Add Ticket</a>
-
-
+      <a  *ngIf="isAdmin()"  routerLink="/add-ticket"  type="button" class="btn btn-primary text-white mb-5 mt-5" style="color: #08A7FD; float: left; ">Add Ticket</a>
+        <div style="width: 50%; margin: auto">
+          <ng-template [ngIf]="successMessage">
+            <div class="alert alert-success" role="alert">
+              {{ successMessage ? successMessage :'' }}
+            </div>
+          </ng-template>
+        </div>
       <table class="table mt-5 ticket-body" >
         <thead>
         <tr>
@@ -17,20 +22,28 @@
           <th scope="col">From</th>
           <th scope="col">To</th>
           <th scope="col">Time</th>
+          <th scope="col">price</th>
+          <th scope="col">Actions</th>
         </tr>
         </thead>
         <tbody  >
         <tr *ngFor="let book of books; index as i; first as isFirst">
           <th scope="row"> {{i + 1}} </th>
-          <td>{{book. from}}</td>
-          <td>{{book. to}}</td>
-          <td>{{book. time}}</td>
+          <td>{{book.from}}</td>
+          <td>{{book.to}}</td>
+          <td>{{book.time}}</td>
+          <td>NGN {{book.price}}</td>
           <td *ngIf="!isAdmin()">
             <button class="btn btn-primary btn-sm" type="button">Book</button> </td>
+          <td *ngIf="isAdmin()">
+            <button class="btn btn-primary btn-sm" type="submit" (click)="deleteTicket(book.id)">Delete</button> </td>
+          <td *ngIf="isAdmin()">
+            <button class="btn btn-primary btn-sm" type="button" (click)="editTicket(book.id)">Edit</button> </td>
         </tr>
 
         </tbody>
       </table>
     </div>
+  </div>
   </div>
 </div>

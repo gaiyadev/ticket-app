@@ -12,4 +12,9 @@ export class TicketsService {
 
   submitHandler(form: any) : Observable<any>{
     return this.http.post<any>(`${environment.baseUrl}/books`, form);
-  }}
+  }
+
+  deleteTicket(id: number) : Observable<any> {
+    return this.http.delete<any>(`${environment.baseUrl}/books/${id}`);
+  }
+}

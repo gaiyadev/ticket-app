@@ -18,6 +18,7 @@ import { AddStudentComponent } from './add-student/add-student.component';
 import { WalletComponent } from './wallet/wallet.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { TicketsComponent } from './tickets/tickets.component';
+import { EditTicketComponent } from './edit-ticket/edit-ticket.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { TicketsComponent } from './tickets/tickets.component';
     AddStudentComponent,
     WalletComponent,
     SideNavComponent,
-    TicketsComponent
+    TicketsComponent,
+    EditTicketComponent
   ],
   imports: [
     BrowserModule,

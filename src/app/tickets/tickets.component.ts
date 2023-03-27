@@ -3,10 +3,12 @@ import {TicketService} from "../ticket/ticket.service";
 import {TicketsService} from "./tickets.service";
 import {DashboardService} from "../dashboard/dashboard.service";
 import {LoginService} from "../login/login.service";
+import {Router} from "@angular/router";
 interface User {
   from: string
   to: string
   time: string
+  price: string
 }
 @Component({
   selector: 'app-tickets',
@@ -16,7 +18,9 @@ interface User {
 export class TicketsComponent implements OnInit {
   constructor(
     private readonly dashboardService: DashboardService,
-    private readonly loginService:LoginService
+    private readonly loginService:LoginService,
+    private readonly ticketsService: TicketsService,
+    private router: Router,
   )
   { }
 
@@ -26,7 +30,7 @@ export class TicketsComponent implements OnInit {
 
   loading: boolean =false
   books: any = []
-
+  successMessage: string = ''
   isAdmin(): any{
     const user: any = localStorage.getItem('appData')
     return  JSON.parse(user).isAdmin
@@ -38,7 +42,6 @@ export class TicketsComponent implements OnInit {
         next: (response) => {
           this.loading = false
           this.books = response
-          console.log(this.books)
         },
         error: (error) => {
           console.log('error er', error);
@@ -53,5 +56,27 @@ export class TicketsComponent implements OnInit {
 
   logout(){
     return this.loginService.logout()
+  }
+
+  deleteTicket(id: number) {
+    return this.ticketsService.deleteTicket(id)
+      .subscribe({
+      next: (response) => {
+        this.loading = false
+        this.successMessage = "Deleted successfully"
+        this.getBooks()
+      },
+      error: (error) => {
+        console.log('error er', error);
+        this.loading = false
+      },
+      complete: () => {
+        this.loading = false
+        console.log('Done fetching data')
+      }
+    });
+  }
+  editTicket(id: number){
+    this.router.navigate([`tickets/${id}`]).then(r => console.log('dd'));
   }
 }
