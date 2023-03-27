@@ -3,32 +3,33 @@
     <div class="col-md-4">
       <app-side-nav></app-side-nav>
     </div>
-    <div class="col-md-8" >
-      <h3 class="mt-5"  *ngIf="!isAdmin()"> Book Tickets </h3>
-      <h3 class="mt-5"  *ngIf="isAdmin()"> Available Tickets </h3>
-      <h6 class="text-primary my-3" style="text-decoration: underline"><a   href="#" class="nav-link" routerLink="/add-ticket">Add Ticket</a></h6>
-
-      <table class="table mt-5 ticket-body" >
-        <thead>
-        <tr>
-          <th scope="col">S/N</th>
-          <th scope="col">From</th>
-          <th scope="col">To</th>
-          <th scope="col">Time</th>
-        </tr>
-        </thead>
-        <tbody  >
-        <tr *ngFor="let book of books; index as i; first as isFirst">
-          <th scope="row"> {{i + 1}} </th>
-          <td>{{book. from}}</td>
-          <td>{{book. to}}</td>
-          <td>{{book. time}}</td>
-          <td *ngIf="!isAdmin()">
-            <button class="btn btn-primary btn-sm" type="button">Book</button> </td>
-        </tr>
-
-        </tbody>
-      </table>
+    <div class="col-md-8 mt-5" style="margin-left: -120px">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card bg-primary">
+              <div class="card-body">
+                <h5 class="card-title text-white">Total Users</h5>
+                <p class="card-text text-white">10,000</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body bg-warning">
+                <h5 class="card-title text-white">Active Users</h5>
+                <p class="card-text text-white">5,000</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body bg-success">
+                <h5 class="card-title text-white">Bookings</h5>
+                <p class="card-text text-white">$20,000</p>
+              </div>
+            </div>
+          </div>
+      </div>
     </div>
   </div>
 </div>

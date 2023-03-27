@@ -9,6 +9,8 @@
 }
 
 .form-card {
-  margin: auto;
-  width: 80%;
+  /*margin: auto;*/
+  width: 60%;
+  float: right;
+  margin-left: -50px;
 }

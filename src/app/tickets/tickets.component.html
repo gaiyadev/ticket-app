@@ -1,0 +1,36 @@
+<div  class="container-fluid" >
+  <div class="row" >
+    <div class="col-md-4">
+      <app-side-nav></app-side-nav>
+    </div>
+    <div class="col-md-8" >
+      <h3 class="mt-5"  *ngIf="!isAdmin()"> Book Tickets </h3>
+      <h3 class="mt-5"  *ngIf="isAdmin()"> Available Tickets </h3>
+<!--      <h6 class="text-primary my-3" style="text-decoration: underline"><a   href="#" class="nav-link" routerLink="/add-ticket">Add Ticket</a></h6>-->
+      <a  routerLink="/add-ticket"  type="button" class="btn btn-primary text-white mb-5 mt-5" style="color: #08A7FD; float: left; ">Add Ticket</a>
+
+
+      <table class="table mt-5 ticket-body" >
+        <thead>
+        <tr>
+          <th scope="col">S/N</th>
+          <th scope="col">From</th>
+          <th scope="col">To</th>
+          <th scope="col">Time</th>
+        </tr>
+        </thead>
+        <tbody  >
+        <tr *ngFor="let book of books; index as i; first as isFirst">
+          <th scope="row"> {{i + 1}} </th>
+          <td>{{book. from}}</td>
+          <td>{{book. to}}</td>
+          <td>{{book. time}}</td>
+          <td *ngIf="!isAdmin()">
+            <button class="btn btn-primary btn-sm" type="button">Book</button> </td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
