@@ -19,6 +19,7 @@ import { WalletComponent } from './wallet/wallet.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { TicketsComponent } from './tickets/tickets.component';
 import { EditTicketComponent } from './edit-ticket/edit-ticket.component';
+import { EditStudentComponent } from './edit-student/edit-student.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { EditTicketComponent } from './edit-ticket/edit-ticket.component';
     WalletComponent,
     SideNavComponent,
     TicketsComponent,
-    EditTicketComponent
+    EditTicketComponent,
+    EditStudentComponent
   ],
   imports: [
     BrowserModule,

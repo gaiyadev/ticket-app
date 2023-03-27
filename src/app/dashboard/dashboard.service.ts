@@ -14,4 +14,16 @@ export class DashboardService {
   getBooks() : Observable<any>{
     return this.http.get<any>(`${environment.baseUrl}/books`);
   }
+
+  studentsCount() : Observable<any>{
+    return this.http.get<any>(`${environment.baseUrl}/students/counts`);
+  }
+
+  activeUser() : Observable<any>{
+    return this.http.get<any>(`${environment.baseUrl}/users/active/counts`);
+  }
+
+  totalTickets() : Observable<any>{
+    return this.http.get<any>(`${environment.baseUrl}/books/`);
+  }
 }

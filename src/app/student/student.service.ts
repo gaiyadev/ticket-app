@@ -13,4 +13,12 @@ export class StudentService {
   getStudents() : Observable<any>{
     return this.http.get<any>(`${environment.baseUrl}/students`);
   }
+
+  editStudent(id: number){
+    return this.http.get<any>(`${environment.baseUrl}/students/${id}`);
+  }
+
+  deleteStudent(id: number){
+    return this.http.delete<any>(`${environment.baseUrl}/students/${id}`);
+  }
 }

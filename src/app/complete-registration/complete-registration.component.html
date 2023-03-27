@@ -6,8 +6,12 @@
     <div class="col-md-4">
       <div class="card mt-5">
         <div class="card-body">
-          <h3 class="text-danger text-center"> {{ errorMessage ? errorMessage :'' }} </h3>
-
+<!--          <h3 class="text-danger text-center"> {{ errorMessage ? errorMessage :'' }} </h3>-->
+          <ng-template [ngIf]="errorMessage">
+            <div class="alert alert-danger" role="alert">
+              {{ errorMessage ? errorMessage :'' }}
+            </div>
+          </ng-template>
           <form  (ngSubmit)="submitHandler(form)">
             <h2 class="mb-3 mt-0">Complete registration</h2>
             <div class="mb-3" >

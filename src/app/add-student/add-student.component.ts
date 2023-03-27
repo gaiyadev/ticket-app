@@ -51,13 +51,14 @@ export class AddStudentComponent implements OnInit {
         next: (response) => {
           this.loading = false
           this.errorMessage = ''
+          this.successMessage = ''
           // alert('Added successfully')
           this.successMessage = 'Added successfully'
           // this.router.navigate(['/student']);
         },
         error: (error) => {
           this.errorMessage = error.error.message
-          console.log(error)
+          this.successMessage = ''
           this.loading = false
         },
         complete: () => {

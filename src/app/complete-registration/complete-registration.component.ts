@@ -79,7 +79,8 @@ submitHandler(form: User) {
           this.router.navigate(['/login']);
         },
         error: (error) => {
-          this.errorMessage = error.error.error.message
+          console.log(error)
+          this.errorMessage = error.error.message
           this.loading = false
         },
         complete: () => {

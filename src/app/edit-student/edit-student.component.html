@@ -8,23 +8,18 @@
       <div class="card mt-5 ">
         <div class="card-body">
           <h4 class="mb-3 mt-0 mb-5">Add Student</h4>
-<!--          <h3 class="text-danger text-center"> {{ errorMessage ? errorMessage :'' }} </h3>-->
-          <ng-template [ngIf]="errorMessage">
-            <div class="alert alert-danger" role="alert">
-              {{ errorMessage ? errorMessage :'' }}
-            </div>
-          </ng-template>
+          <h3 class="text-danger text-center"> {{ errorMessage ? errorMessage :'' }} </h3>
           <ng-template [ngIf]="successMessage">
             <div class="alert alert-success" role="alert">
               {{ successMessage ? successMessage :'' }}
             </div>
           </ng-template>
           <form  (ngSubmit)="submitHandler(form)" #myForm = 'ngForm'>
-<!--            one-->
+            <!--            one-->
             <div class="row">
               <div class="col-sm-6">
                 <div class="mb-3" >
-                  <input type="text"  [(ngModel)]="form.firstName" #firstName="ngModel"  required class="form-control" name="firstName" id="firstName" placeholder="John">
+                  <input type="text"  [(ngModel)]="form.firstName" #firstName="ngModel"  required class="form-control" name="firstName" id="firstName" placeholder="First Name">
                 </div>
                 <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="pt-1">
                   <p *ngIf="firstName.errors?.['required']"  class="text-danger" >
@@ -43,10 +38,9 @@
                 </div>
               </div>
             </div>
-<!--2-->
+            <!--2-->
 
             <div class="mb-3" >
-<!--              <label for="email" class="form-label">Email Address</label>-->
               <input type="email"   [(ngModel)]="form.email" #email="ngModel"  required class="form-control" name="email" id="email" placeholder="Email Address">
             </div>
             <div *ngIf="email.invalid && (email.dirty || email.touched)" class="pt-1">
@@ -56,8 +50,8 @@
             </div>
             <!---->
             <div class="mb-3" >
-<!--              <label for="regNumber" class="form-label">Reg.Number</label>-->
-              <input type="text"   [(ngModel)]="form.reqNumber" #regNumber="ngModel"  required class="form-control" name="regNumber" id="regNumber" placeholder="Reg. Number">
+              <!--              <label for="regNumber" class="form-label">Reg.Number</label>-->
+              <input type="text"   [(ngModel)]="form.reqNumber" #regNumber="ngModel"  required class="form-control" name="regNumber" id="regNumber" placeholder="reg. Number">
             </div>
             <div *ngIf="regNumber.invalid && (regNumber.dirty || regNumber.touched)" class="pt-1">
               <p *ngIf="regNumber.errors?.['required']"  class="text-danger mt-0" >
@@ -71,7 +65,6 @@
             <div class="row">
               <div class="col-sm-6">
                 <div class="mb-3" >
-<!--                  <label for="department" class="form-label">Department</label>-->
                   <input type="text"   [(ngModel)]="form.department" #department="ngModel"  required class="form-control" name="department" id="department" placeholder="Department">
                 </div>
                 <div *ngIf="department.invalid && (department.dirty || department.touched)" class="pt-1">
@@ -83,23 +76,22 @@
               <div class="col-sm-6">
                 <div class="mb-3" >
                   <div class="mb-3" >
-<!--                    <label for="level" class="form-label">Faculty</label>-->
-                    <input type="text"   [(ngModel)]="form.faculty" #faculty="ngModel"  required class="form-control" name="faculty" id="faculty" placeholder="Faculty">
+                    <input type="text"   [(ngModel)]="form.faculty" #faculty="ngModel"  required class="form-control" name="level" id="faculty" placeholder="Faculty">
                   </div>
                   <div *ngIf="faculty.invalid && (faculty.dirty || faculty.touched)" class="pt-1">
                     <p *ngIf="faculty.errors?.['required']"  class="text-danger" >
-                      faculty  is required.
+                      Faculty  is required.
                     </p>
                   </div>
                 </div>
-            </div>
+              </div>
             </div>
 
             <!--            -->
             <div class="row">
               <div class="col-sm-6">
                 <div class="mb-3" >
-<!--                  <label for="course" class="form-label">Course</label>-->
+                  <!--                  <label for="course" class="form-label">Course</label>-->
                   <input type="text"   [(ngModel)]="form.course" #course="ngModel"  required class="form-control" name="course" id="course" placeholder="Course">
                 </div>
                 <div *ngIf="course.invalid && (course.dirty || course.touched)" class="pt-1">
@@ -120,7 +112,7 @@
               </div>
             </div>
 
-            <button type="submit" name="submit" [disabled]="myForm.form.invalid" class="btn btn-primary custom-btn mt-2"> {{ loading ? 'Submitting' : 'ADD'}}  </button>
+            <button type="submit" name="submit" [disabled]="myForm.form.invalid" class="btn btn-primary custom-btn mt-2"> {{ loading ? 'Submitting' : 'Edit Student'}}  </button>
           </form>
         </div>
       </div>

@@ -28,6 +28,7 @@ export class WalletComponent implements OnInit {
   errorMessage: string = ''
   userId: any
   walletBalance: any = 0;
+  walletId: any = ''
 
   submitHandler(form: any){
     this.loading = true
@@ -62,6 +63,7 @@ export class WalletComponent implements OnInit {
       .subscribe({
         next: (response) => {
           this.walletBalance =  response.balance
+          this.walletId =  response.walletId
           this.loading = false
         },
         error: (error) => {
