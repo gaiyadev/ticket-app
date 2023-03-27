@@ -11,9 +11,9 @@
         </ng-template>
         <ng-template [ngIf]="isAuthenticated()" >
 
-        <li class="nav-item dropdown  text-white">
-          <a class="nav-link dropdown-toggle  text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Hi,  {{email()}}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <span style="color: #08A7FD; font-weight: bold">Hi,  {{email()}}</span>
           </a>
           <ul class="dropdown-menu">
 <!--            <li *ngIf="!isAdmin()"  class="" ><a class="dropdown-item" href="#"></a></li>-->
@@ -22,9 +22,9 @@
 <!--            <li *ngIf="!isAdmin()"><a class="dropdown-item" href="#"></a></li>-->
             <li  *ngIf="!isAdmin()"><a class= "dropdown-item" href="#" routerLink="/history">Transaction History</a></li>
 
-            <li  *ngIf="isAdmin()"><a class= "dropdown-item" href="#" routerLink="/student">Student</a></li>
+            <li  *ngIf="isAdmin()"><a class= "dropdown-item" href="#" routerLink="/student">Manage Student</a></li>
 
-            <li *ngIf="isAdmin()"><a class="dropdown-item" href="#">Tickets</a></li>
+            <li *ngIf="isAdmin()"><a class="dropdown-item" href="#">Manage Tickets</a></li>
             <li *ngIf="isAdmin()"><a class="dropdown-item links" href="/dashboard">Dashboard</a></li>
 
             <li><hr class="dropdown-divider"></li>

@@ -1,0 +1,14 @@
+.custom-btn {
+  background-color: #08A7FD !important;
+  border-color: #08A7FD;
+  width: 100%;
+}
+.custom-btn:hover {
+  background-color: #08A7FD;
+  border-color: #08A7FD;
+}
+
+.form-card {
+  margin: auto;
+  width: 80%;
+}

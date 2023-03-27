@@ -1,11 +1,12 @@
-<div  class="container" >
+<div  class="container-fluid" >
   <div class="row" >
-    <div class="2"></div>
-    <div class="10">
-      <h3 class="mt-5">Students</h3>
-       <h6 class="text-primary my-3" style="text-decoration: underline"><a   href="#" class="nav-link" routerLink="/add-student">Add Student</a></h6>
-
-      <table class="table mt-5">
+    <div class="col-md-4">
+      <app-side-nav></app-side-nav>
+    </div>
+    <div class="col-md-8">
+      <h3 class="mt-5 text-lg-start">All Students</h3>
+      <button  routerLink="/add-student" type="button" class="btn btn-primary text-white mb-5" style="color: #08A7FD; float: right">Add Student</button>
+      <table class="table mt-5" style="margin-left: -220px; padding: 10px">
         <thead>
         <tr>
           <th scope="col">S/N</th>
@@ -22,7 +23,7 @@
 <!--          <th scope="col">createdAt</th>-->
         </tr>
         </thead>
-        <tbody  >
+        <tbody>
         <tr *ngFor="let student of students; index as i; first as isFirst">
           <th scope="row"> {{i + 1}} </th>
           <td>{{student.firstName}}</td>
@@ -43,6 +44,5 @@
         </tbody>
       </table>
     </div>
-    <div class="2"></div>
   </div>
 </div>

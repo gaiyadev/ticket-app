@@ -16,6 +16,7 @@ import { StudentComponent } from './student/student.component';
 import { TicketComponent } from './ticket/ticket.component';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { WalletComponent } from './wallet/wallet.component';
+import { SideNavComponent } from './side-nav/side-nav.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { WalletComponent } from './wallet/wallet.component';
     StudentComponent,
     TicketComponent,
     AddStudentComponent,
-    WalletComponent
+    WalletComponent,
+    SideNavComponent
   ],
   imports: [
     BrowserModule,

@@ -1,30 +1,43 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-4"></div>
-    <!--    -->
-    <div class="col-md-4">
-      <div class="card mt-5">
-        <div class="card-body">
-          <h3 class="text-danger text-center"> {{ errorMessage ? errorMessage :'' }} </h3>
 
-          <form  (ngSubmit)="submitHandler(form)">
-            <h2 class="mb-3 mt-0">Search</h2>
-            <div>
-              <label for="regNumber" class="form-label">Reg.Number</label>
-              <input type="text"  [(ngModel)]="form.regNumber" #regNumber="ngModel"  required class="form-control" name="regNumber" id="regNumber" placeholder="CST/18/COM/00192">
+    <!-- Image link on the left side -->
+    <div class="col-md-6" style="background-color: #08A7FD">
+      <img class="image-link" src="./assets/bus_illustration.png" alt="Image">
+      <p class="text-center hero">Purchase Ticket With Great Ease! <br> <span class="station">No waiting at the bus station</span> </p>
+    </div>
+
+    <!-- Login form on the right side -->
+    <div class="col-md-6">
+      <div class="card-body form-body">
+        <img class="logo" src="./assets/buk_logo.png" alt="logo Image">
+        <form (ngSubmit)="submitHandler(form)" #myForm = 'ngForm'>
+          <h3 class="mb-3 mt-0 text-center h3-text-grey">Activate your profile</h3>
+          <p class="text-center p-text-grey">Please enter your details</p>
+          <ng-template [ngIf]="errorMessage">
+            <div class="alert alert-danger" role="alert">
+              {{ errorMessage ? errorMessage :'' }}
             </div>
-            <div *ngIf="regNumber.invalid && (regNumber.dirty || regNumber.touched)" class="pt-1">
-              <p *ngIf="regNumber.errors?.['required']"  class="text-danger" >
-                Reg Number is required.
-              </p>
-            </div>
-            <button type="submit" name="submit" class="btn btn-primary mt-2"> {{ loading ? 'Submitting' : 'Search'}}  </button>
-          </form>
-        </div>
+          </ng-template>
+
+          <div>
+            <!--            <label for="regNumber" class="form-label">Registration Number</label>-->
+            <input type="text"   [(ngModel)]="form.regNumber" #regNumber="ngModel"  required class="form-control input-group-lg" name="regNumber" id="regNumber" placeholder="CST/18/COM/00192">
+
+          </div>
+          <!--            -->
+          <div *ngIf="regNumber.invalid && (regNumber.dirty || regNumber.touched)" class="pt-1">
+            <p *ngIf="regNumber.errors?.['required']"  class="text-danger" >
+              Reg Number is required.
+            </p>
+          </div>
+
+          <!--      btn-->
+          <br>
+          <button type="submit" [disabled]="myForm.form.invalid"  name="submit" class="btn btn-primary custom-btn btn-block mt-3"> {{ loading ? 'Submitting' : 'Search'}}  </button>
+        </form>
       </div>
     </div>
-    <!--    -->
-    <div class="col-md-4"></div>
   </div>
 </div>

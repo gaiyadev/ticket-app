@@ -43,15 +43,17 @@ export class AddStudentComponent implements OnInit {
   }
 
   errorMessage: string = ''
+  successMessage: string = ''
 
   submitHandler(form: User) {
     this.addStudentService.submitHandler(form)
       .subscribe({
         next: (response) => {
           this.loading = false
-          console.log("response")
-          alert('Added successfully')
-          this.router.navigate(['/student']);
+          this.errorMessage = ''
+          // alert('Added successfully')
+          this.successMessage = 'Added successfully'
+          // this.router.navigate(['/student']);
         },
         error: (error) => {
           this.errorMessage = error.error.message
