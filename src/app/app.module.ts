@@ -20,6 +20,7 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 import { TicketsComponent } from './tickets/tickets.component';
 import { EditTicketComponent } from './edit-ticket/edit-ticket.component';
 import { EditStudentComponent } from './edit-student/edit-student.component';
+import { BookTicketComponent } from './book-ticket/book-ticket.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { EditStudentComponent } from './edit-student/edit-student.component';
     SideNavComponent,
     TicketsComponent,
     EditTicketComponent,
-    EditStudentComponent
+    EditStudentComponent,
+    BookTicketComponent
   ],
   imports: [
     BrowserModule,

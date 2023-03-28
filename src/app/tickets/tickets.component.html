@@ -32,9 +32,9 @@
           <td>{{book.from}}</td>
           <td>{{book.to}}</td>
           <td>{{book.time}}</td>
-          <td>NGN {{book.price}}</td>
+          <td>&#8358; {{book.price}}</td>
           <td *ngIf="!isAdmin()">
-            <button class="btn btn-primary btn-sm" type="button">Book</button> </td>
+            <button class="btn btn-primary btn-sm" (click)="bookTicket(book.id)" type="button">Book</button> </td>
           <td *ngIf="isAdmin()">
             <button class="btn btn-primary btn-sm" type="submit" (click)="deleteTicket(book.id)">Delete</button> </td>
           <td *ngIf="isAdmin()">

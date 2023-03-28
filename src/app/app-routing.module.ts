@@ -15,6 +15,7 @@ import {WalletComponent} from "./wallet/wallet.component";
 import {TicketsComponent} from "./tickets/tickets.component";
 import {EditTicketComponent} from "./edit-ticket/edit-ticket.component";
 import {EditStudentComponent} from "./edit-student/edit-student.component";
+import {BookTicketComponent} from "./book-ticket/book-ticket.component";
 
 const routes: Routes = [
   {
@@ -83,6 +84,13 @@ const routes: Routes = [
     path: 'tickets/:id',
     component: EditTicketComponent,
     title: "Edit Ticket",
+    canActivate: [AuthGuardGuard],
+
+  },
+  {
+    path: 'book-ticket/:id',
+    component: BookTicketComponent,
+    title: "Book Ticket",
     canActivate: [AuthGuardGuard],
 
   },

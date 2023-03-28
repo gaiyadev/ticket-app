@@ -1,0 +1,10 @@
+span {
+  color: #08A7FD;
+  /*margin-right: 12px;*/
+}
+
+.seat-number {
+  border-color: #08A7FD;
+  border-radius: 5px;
+  padding: 0px 10px;
+}

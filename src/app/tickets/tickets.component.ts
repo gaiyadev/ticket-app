@@ -79,4 +79,8 @@ export class TicketsComponent implements OnInit {
   editTicket(id: number){
     this.router.navigate([`tickets/${id}`]).then(r => console.log('dd'));
   }
+
+  bookTicket(id: number){
+    this.router.navigate([`book-ticket/${id}`]).then(r => console.log('dd'));
+  }
 }

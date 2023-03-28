@@ -1,0 +1,31 @@
+<div  class="container-fluid" >
+  <div class="row" >
+    <div class="col-md-4">
+      <app-side-nav></app-side-nav>
+    </div>
+    <div class="col-md-8" >
+      <div class="card">
+        <div class="card-header">
+          Booking Details
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Booking Confirmation</h5>
+          <p class="card-text">Thank you for booking with us!</p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><span>Book date: &nbsp;</span> {{book.createdAt}} </li>
+            <li class="list-group-item"><span>From</span>: &nbsp; {{book.from}}</li>
+            <li class="list-group-item"><span>To</span>:  &nbsp;{{book.to}}</li>
+            <li class="list-group-item"><span>Time</span>:  &nbsp;{{book.time}}</li>
+            <li class="list-group-item"> <span>Number of seat: &nbsp;</span> <input class="seat-number"  [(ngModel)]="seat_number" required  name="seat_number" id="seat_number" placeholder="Number of seat" type="number"> </li>
+            <li class="list-group-item"><span>Total Price</span>:  &nbsp;&#8358;{{+book.price * +seat_number}}</li>
+          </ul>
+          <div class="mt-3">
+            <button type="submit" class="btn btn-primary" (click)="payWithCard(book.id)">Pay With Card</button> &nbsp;
+            <button type="submit" class="btn btn-primary" (click)="payWithWallet(book.id)">Pay With Wallet</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
