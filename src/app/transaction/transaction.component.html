@@ -1,0 +1,42 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      <app-side-nav></app-side-nav>
+    </div>
+    <!--    -->
+    <div class="col-md-8" >
+      <div class="card-body" style="margin-left: -200px">
+        <h3 class="mt-5"> Transactions </h3>
+        <div style="width: 50%; margin: auto">
+
+        </div>
+        <table class="table mt-5 ticket-body" >
+          <thead>
+          <tr>
+            <th scope="col">S/N</th>
+            <th scope="col">Transaction Type</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Balance before</th>
+            <th scope="col">Balance after</th>
+            <th scope="col">Transaction time</th>
+          </tr>
+          </thead>
+          <tbody  >
+          <tr *ngFor="let transaction of transactions; index as i; first as isFirst">
+            <th scope="row"> {{i + 1}} </th>
+            <td>{{transaction.transactionType}}</td>
+            <td>{{transaction.amount}}</td>
+            <td>{{transaction.balanceBefore}}</td>
+            <td>&#8358; {{transaction.balanceAfter}}</td>
+            <td> {{transaction.createdAt}}</td>
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!--    -->
+  </div>
+</div>

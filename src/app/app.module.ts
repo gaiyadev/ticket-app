@@ -21,6 +21,7 @@ import { TicketsComponent } from './tickets/tickets.component';
 import { EditTicketComponent } from './edit-ticket/edit-ticket.component';
 import { EditStudentComponent } from './edit-student/edit-student.component';
 import { BookTicketComponent } from './book-ticket/book-ticket.component';
+import { TransactionComponent } from './transaction/transaction.component';
 
 @NgModule({
   declarations: [
@@ -41,13 +42,14 @@ import { BookTicketComponent } from './book-ticket/book-ticket.component';
     TicketsComponent,
     EditTicketComponent,
     EditStudentComponent,
-    BookTicketComponent
+    BookTicketComponent,
+    TransactionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DashboardService} from "./dashboard.service";
 import {LoginService} from "../login/login.service";
+import {WalletService} from "../wallet/wallet.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +12,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private readonly dashboardService: DashboardService,
-    private readonly loginService:LoginService
+    private readonly loginService:LoginService,
   )
   { }
 
@@ -20,8 +21,15 @@ export class DashboardComponent implements OnInit {
     this.studentsCount()
     this.totalTickets()
     this.activeUser()
+    // this.getWallet(this.userId)
   }
+  userId: any ='';
+  walletBalance: any= 0
+  getUserId() {
+    const user: any = localStorage.getItem('appData')
+    return this.userId = JSON.parse(user).id
 
+  }
   loading: boolean =false
   books: any = []
 students: any = ''
@@ -112,5 +120,21 @@ tickets: any = ''
         }
       });
   }
-
+getWallet(id: number){
+  this.dashboardService.getWallet(id)
+    .subscribe({
+      next: (response) => {
+        // this.walletBalance = response.balance
+        console.log("ssss",response)
+        this.loading = false
+      },
+      error: (error) => {
+        this.loading = false
+      },
+      complete: () => {
+        this.loading = false
+        console.log('Done fetching data')
+      }
+    });
+}
 }

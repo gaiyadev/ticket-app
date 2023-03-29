@@ -10,11 +10,9 @@ export class SideNavComponent implements OnInit {
 
   constructor(private readonly loginService: LoginService) { }
   admin: boolean | undefined
-
   ngOnInit(): void {
     this.isAdmin()
     this.email()
-    console.log(this.isAdmin())
   }
 
   logout(){
@@ -35,5 +33,4 @@ export class SideNavComponent implements OnInit {
     const user: any = localStorage.getItem('appData')
     return  JSON.parse(user).reqNumber
   }
-
 }

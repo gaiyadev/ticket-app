@@ -10,9 +10,9 @@ export class WalletService {
 
   constructor(private readonly http: HttpClient) { }
 
-  submitHandler(form: any) : Observable<any>{
-    console.log(form)
-    return this.http.post<any>(`${environment.baseUrl}/wallets/verify-payment/20ffdfd/12`, form);
+  submitHandler(form: any, userId: number) : Observable<any>{
+    console.log('form>>>', form, userId)
+    return this.http.post<any>(`${environment.baseUrl}/wallets/add-fund/${userId}`, form);
 
   }
 

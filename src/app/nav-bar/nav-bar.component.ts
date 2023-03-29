@@ -33,7 +33,7 @@ export class NavBarComponent implements OnInit {
 
   email(): any{
     const user: any = localStorage.getItem('appData')
-    return  JSON.parse(user).reqNumber
+    return  JSON.parse(user).email
   }
 
 }

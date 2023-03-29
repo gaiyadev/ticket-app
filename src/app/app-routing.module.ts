@@ -16,6 +16,7 @@ import {TicketsComponent} from "./tickets/tickets.component";
 import {EditTicketComponent} from "./edit-ticket/edit-ticket.component";
 import {EditStudentComponent} from "./edit-student/edit-student.component";
 import {BookTicketComponent} from "./book-ticket/book-ticket.component";
+import {TransactionComponent} from "./transaction/transaction.component";
 
 const routes: Routes = [
   {
@@ -98,6 +99,12 @@ const routes: Routes = [
     path: 'wallet',
     component: WalletComponent,
     title: "wallet",
+    canActivate: [AuthGuardGuard],
+  },
+  {
+    path: 'transaction',
+    component: TransactionComponent,
+    title: "Transaction",
     canActivate: [AuthGuardGuard],
   },
   // {

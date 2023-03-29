@@ -26,4 +26,9 @@ export class DashboardService {
   totalTickets() : Observable<any>{
     return this.http.get<any>(`${environment.baseUrl}/books/`);
   }
+
+  getWallet(id: number) : Observable<any>{
+    return this.http.get<any>(`${environment.baseUrl}/wallets/${id}`);
+
+  }
 }
