@@ -22,6 +22,7 @@ import { EditTicketComponent } from './edit-ticket/edit-ticket.component';
 import { EditStudentComponent } from './edit-student/edit-student.component';
 import { BookTicketComponent } from './book-ticket/book-ticket.component';
 import { TransactionComponent } from './transaction/transaction.component';
+import { RecieptComponent } from './reciept/reciept.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { TransactionComponent } from './transaction/transaction.component';
     EditTicketComponent,
     EditStudentComponent,
     BookTicketComponent,
-    TransactionComponent
+    TransactionComponent,
+    RecieptComponent
   ],
   imports: [
     BrowserModule,

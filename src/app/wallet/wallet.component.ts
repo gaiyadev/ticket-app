@@ -91,6 +91,7 @@ accessToken: any = ''
     const amount =this.form.amount
     // @ts-ignore
     const handler = PaystackPop.setup({
+      key: 'pk_test_',
       email: this.userData.email,
       amount: this.form.amount * 100,
       onClose(){

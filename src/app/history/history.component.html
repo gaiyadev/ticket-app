@@ -1,13 +1,40 @@
-
-<div class="container-fluid">
-  <div class="row">
+<div  class="container-fluid" >
+  <div class="row" >
     <div class="col-md-4">
       <app-side-nav></app-side-nav>
     </div>
-    <!--    -->
-    <div class="col-md-4">
-      table
+    <div class="col-md-8" >
+      <div class="card-body" style="margin-left: -200px">
+        <h3 class="mt-5"> Book Tickets </h3>
+        <div style="width: 50%; margin: auto">
+        </div>
+        <table class="table mt-5 ticket-body" >
+          <thead>
+          <tr>
+            <th scope="col">S/N</th>
+            <th scope="col">From</th>
+            <th scope="col">To</th>
+            <th scope="col">Time</th>
+            <th scope="col">price</th>
+            <th scope="col">Seats</th>
+            <th scope="col">BookingId</th>
+          </tr>
+          </thead>
+          <tbody  >
+          <tr *ngFor="let book of books; index as i; first as isFirst">
+            <th scope="row"> {{i + 1}} </th>
+            <td>{{book.book.from}}</td>
+            <td>{{book.book.to}}</td>
+            <td>{{book.book.time}}</td>
+            <td>&#8358; {{book.amount}}</td>
+            <td>{{book.seat_number}}</td>
+            <td>{{book.uniqueId}}</td>
+            <td>
+              <button class="btn btn-primary btn-sm" (click)="viewTicket(book.id)" type="button">View</button> </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-    <!--    -->
   </div>
 </div>

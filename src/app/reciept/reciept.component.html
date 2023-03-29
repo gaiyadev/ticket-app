@@ -8,25 +8,19 @@
         <div class="card-header">
           Booking Details
         </div>
-        <ng-template [ngIf]="errorMessage">
-          <div class="alert alert-danger" role="alert">
-            {{ errorMessage ? errorMessage :'' }}
-          </div>
-        </ng-template>
         <div class="card-body">
-          <h5 class="card-title">Booking Confirmation</h5>
+          <h5 class="card-title">Booking Confirmation for {{uniqueId }}</h5>
           <p class="card-text">Thank you for booking with us!</p>
           <ul class="list-group list-group-flush">
             <li class="list-group-item"><span>Book date: &nbsp;</span> {{book.createdAt}} </li>
             <li class="list-group-item"><span>From</span>: &nbsp; {{book.from}}</li>
             <li class="list-group-item"><span>To</span>:  &nbsp;{{book.to}}</li>
             <li class="list-group-item"><span>Time</span>:  &nbsp;{{book.time}}</li>
-            <li class="list-group-item"> <span>Number of seat: &nbsp;</span> <input class="seat-number"  [(ngModel)]="seat_number" required  name="seat_number" id="seat_number" placeholder="Number of seat" type="number"> </li>
-            <li class="list-group-item"><span>Total Price</span>:  &nbsp;&#8358;{{+book.price * +seat_number}}</li>
+            <li class="list-group-item"><span>Amount Paid</span>:  &nbsp; &#8358;{{amount}}</li>
+            <li class="list-group-item"><span>Number of Seats</span>:  &nbsp;{{seat_number}}</li>
           </ul>
           <div class="mt-3">
-            <button type="submit" class="btn btn-primary" (click)="payWithCard(book.id)"> {{ loading ? "Processing" :"Pay With Card" }} </button> &nbsp;
-            <button type="submit" class="btn btn-primary" (click)="payWithWallet(book.id)">Pay With Wallet</button>
+            <button type="submit" class="btn btn-primary">Download</button>
           </div>
         </div>
       </div>

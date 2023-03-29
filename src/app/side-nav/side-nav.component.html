@@ -1,8 +1,9 @@
 <nav class="nav flex-column sidebar">
     <li><a class="nav-link links text-white" routerLink="/dashboard">Dashboard</a></li>
     <li  *ngIf="isAdmin()"><a class="nav-link links text-white" routerLink="/student">Students</a></li>
-    <li><a class="nav-link links text-white" routerLink="/tickets">Tickets</a></li>
-    <li  *ngIf="isAdmin()"><a class="nav-link links text-white" routerLink="/dashboard">Bookings</a></li>
+    <li><a class="nav-link links text-white" routerLink="/tickets">Available Tickets</a></li>
+  <li   *ngIf="!isAdmin()"><a class="nav-link links text-white" routerLink="/history" >Booked Tickets</a></li>
+  <li  *ngIf="isAdmin()"><a class="nav-link links text-white" routerLink="/dashboard">Bookings</a></li>
     <li  *ngIf="!isAdmin()"><a class="nav-link links text-white" routerLink="/wallet">Wallet</a></li>
     <li   *ngIf="!isAdmin()"><a class="nav-link links text-white" routerLink="/transaction/" >Transactions</a></li>
 </nav>
