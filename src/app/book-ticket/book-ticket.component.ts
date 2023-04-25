@@ -21,13 +21,15 @@ export class BookTicketComponent implements OnInit {
       this.fetchTicket( id)
     })
     this.getUserId()
+    // this.getUserId()
+    this.reference = `ref-${Math.ceil(Math.random() * 10e13)}`;
   }
   book: any = {}
   seat_number: any = 1;
   loading: boolean= false
   errorMessage: string = ''
   successMessage: string = ''
-
+  reference: string = ''
   async fetchTicket(id: number) {
     return this.bookTicketService.fetchTicket(id)
       .subscribe({
@@ -45,9 +47,16 @@ export class BookTicketComponent implements OnInit {
   userId: any
   getUserId() {
     const user: any = localStorage.getItem('appData')
+    this.userData.email = JSON.parse(user).email
+    // this.accessToken = localStorage.getItem('accessToken')
     return this.userId = JSON.parse(user).id
-
   }
+  // getUserId() {
+  //   const user: any = localStorage.getItem('appData')
+  //    this.userId = JSON.parse(user).id
+  //   this.userData.email = JSON.parse(user).email
+  //
+  // }
 
   // loading: boolean = false
   payWithCard(id:number) {
@@ -75,8 +84,34 @@ export class BookTicketComponent implements OnInit {
          }
        });
   }
-  payWithWallet(id: number) {
-    return this.bookTicketService.payWithWallet(id)
+  form:  any = {
+    amount: '',
+  }
+  walletBalance: any = 0;
+  walletId: any = ''
+  userData: any= {
+    email:  ''
+  }
+  payWithWallet(bookId: number) {
+    const id =this.userId
+    const amount =this.form.amount
+    // @ts-ignore
+    const handler = PaystackPop.setup({
+      key: `${environment.paystack}`,
+      email: this.userData.email,
+      amount: (Number(this.book.price) * Number(this.seat_number)) * 100,
+      onClose(){
+        alert('Window closed.');
+      },
+      callback(response:any){
+      //   fetch(`${environment.baseUrl}/wallets/add-fund/${id}/${amount}`).then(()=>{
+      //     location.reload()
+      //     // this.getWallet()
+      //   })
+       }
+    });
+    handler.openIframe()
+    // return this.bookTicketService.payWithWallet(id)
 
 
   }

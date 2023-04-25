@@ -10,6 +10,6 @@ export class AddStudentService {
   constructor(private readonly http: HttpClient) { }
 
   submitHandler(form: any) {
-    return this.http.post<any>(`${environment.baseUrl}/students`, form);
+    return this.http.post<any>(`${environment.baseUrl}/users/add`, form);
   }
 }

@@ -5,13 +5,19 @@
     </div>
     <div class="col-md-8" >
       <div class="card-body" style="margin-left: -200px">
-        <h3 class="mt-5"> Book Tickets </h3>
+        <h3 class="mt-5"> All Book Tickets </h3>
         <div style="width: 50%; margin: auto">
+          <input type="text" width="300px"    required class="form-control input-group-sm" name="regNumber" id="regNumber" placeholder="Search">
         </div>
         <table class="table mt-5 ticket-body" >
           <thead>
           <tr>
             <th scope="col">S/N</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email Address</th>
+            <th scope="col">Department</th>
+            <th scope="col">Faculty</th>
             <th scope="col">From</th>
             <th scope="col">To</th>
             <th scope="col">Time</th>
@@ -23,15 +29,21 @@
           <tbody  >
           <tr *ngFor="let book of books; index as i; first as isFirst">
             <th scope="row"> {{i + 1}} </th>
+            <td>{{book.user.firstName}}</td>
+            <td>{{book.user.lastName}}</td>
+            <td>{{book.user.email}}</td>
+            <td>{{book.user.department}}</td>
+            <td>{{book.user.faculty}}</td>
             <td>{{book.book.from}}</td>
             <td>{{book.book.to}}</td>
             <td>{{book.book.time}}</td>
             <td>&#8358; {{book.amount}}.00</td>
             <td>{{book.seat_number}}</td>
             <td>{{book.uniqueId}}</td>
-            <td>{{book.book.createdAt | date}}</td>
-            <td>
-              <button class="btn btn-primary btn-sm" (click)="viewTicket(book.id)" type="button">View</button> </td>
+            <td>{{book.createdAt | date}}</td>
+<!--            <td>-->
+<!--              <button class="btn btn-primary btn-sm" (click)="viewTicket(book.id)" type="button">View</button>-->
+<!--            </td>-->
           </tr>
           </tbody>
         </table>

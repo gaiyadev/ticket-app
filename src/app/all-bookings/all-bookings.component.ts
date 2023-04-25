@@ -1,26 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import {environment} from "../../environments/environment";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
+import {environment} from "../../environments/environment";
 
 @Component({
-  selector: 'app-history',
-  templateUrl: './history.component.html',
-  styleUrls: ['./history.component.css']
+  selector: 'app-all-bookings',
+  templateUrl: './all-bookings.component.html',
+  styleUrls: ['./all-bookings.component.css']
 })
-export class HistoryComponent implements OnInit {
+export class AllBookingsComponent implements OnInit {
+
 
   constructor(private readonly http: HttpClient,     private router: Router,
   ) { }
 
   ngOnInit(): void {
-    this.getUserId()
     this.getBooks()
   }
 
   loading: boolean =false
   books: any = []
   successMessage: string = ''
+
   isAdmin(): any{
     const user: any = localStorage.getItem('appData')
     return  JSON.parse(user).isAdmin
@@ -34,9 +35,8 @@ export class HistoryComponent implements OnInit {
 
   getBooks(): void{
     this.loading = true
-    this.http.get<any>(`${environment.baseUrl}/tickets/book/${this.userId}`)
-
-  .subscribe({
+    this.http.get<any>(`${environment.baseUrl}/tickets/books`)
+      .subscribe({
         next: (response) => {
           console.log(response)
           this.loading = false
@@ -52,8 +52,7 @@ export class HistoryComponent implements OnInit {
         }
       });
   }
-viewTicket(id: number){
-    this.router.navigate([`receipt/${id}`]).then(r => console.log('dd'));
-  }
-
+  // viewTicket(id: number){
+  //   this.router.navigate([`receipt/${id}`]).then(r => console.log('dd'));
+  // }
 }

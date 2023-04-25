@@ -16,7 +16,7 @@
             <h2 class="mb-3 mt-0">Complete registration</h2>
             <div class="mb-3" >
               <label for="firstName" class="form-label">First Name</label>
-              <input type="text" readonly [(ngModel)]="form.firstName" #firstName="ngModel"  required class="form-control" name="firstName" id="firstName" placeholder="John">
+              <input type="text" readonly [(ngModel)]="form.firstName" #firstName="ngModel"  required class="form-control" name="firstName" id="firstName" placeholder="Firstname">
             </div>
             <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="pt-1">
               <p *ngIf="firstName.errors?.['required']"  class="text-danger" >
@@ -26,7 +26,7 @@
 <!--           / -->
             <div class="mb-3" >
               <label for="lastName" class="form-label">Last Name</label>
-              <input type="text" readonly  [(ngModel)]="form.lastName" #lastName="ngModel"  required class="form-control" name="lastName" id="lastName" placeholder="Doe">
+              <input type="text" readonly  [(ngModel)]="form.lastName" #lastName="ngModel"  required class="form-control" name="lastName" id="lastName" placeholder="lastName">
             </div>
             <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="pt-1">
               <p *ngIf="lastName.errors?.['required']"  class="text-danger" >
@@ -36,7 +36,7 @@
 <!--            -->
             <div class="mb-3" >
               <label for="email" class="form-label">Email Address</label>
-              <input type="email" readonly  [(ngModel)]="form.email" #email="ngModel"  required class="form-control" name="email" id="email" placeholder="Doe@gmail.com">
+              <input type="email" readonly  [(ngModel)]="form.email" #email="ngModel"  required class="form-control" name="email" id="email" placeholder="email">
             </div>
             <div *ngIf="email.invalid && (email.dirty || email.touched)" class="pt-1">
               <p *ngIf="email.errors?.['required']"  class="text-danger" >
@@ -46,7 +46,7 @@
 <!---->
             <div class="mb-3" >
               <label for="regNumber" class="form-label">Reg.Number</label>
-              <input type="text"  readonly [(ngModel)]="form.reqNumber" #regNumber="ngModel"  required class="form-control" name="regNumber" id="regNumber" placeholder="CST/18/COM/00192">
+              <input type="text"  readonly [(ngModel)]="form.reqNumber" #regNumber="ngModel"  required class="form-control" name="regNumber" id="regNumber" placeholder="Req. no">
             </div>
             <div *ngIf="regNumber.invalid && (regNumber.dirty || regNumber.touched)" class="pt-1">
               <p *ngIf="regNumber.errors?.['required']"  class="text-danger" >
@@ -57,7 +57,7 @@
             <!--            -->
             <div class="mb-3" >
               <label for="department" class="form-label">Department</label>
-              <input type="text" readonly  [(ngModel)]="form.department" #department="ngModel"  required class="form-control" name="department" id="department" placeholder="Mathematics">
+              <input type="text" readonly  [(ngModel)]="form.department" #department="ngModel"  required class="form-control" name="department" id="department" placeholder="department">
             </div>
             <div *ngIf="department.invalid && (department.dirty || department.touched)" class="pt-1">
               <p *ngIf="department.errors?.['required']"  class="text-danger" >
@@ -67,7 +67,7 @@
             <!--            -->
             <div class="mb-3" >
               <label for="course" class="form-label">Course</label>
-              <input type="text"  readonly [(ngModel)]="form.course" #course="ngModel"  required class="form-control" name="course" id="course" placeholder="Mathematics">
+              <input type="text"  readonly [(ngModel)]="form.course" #course="ngModel"  required class="form-control" name="course" id="course" placeholder="course">
             </div>
             <div *ngIf="course.invalid && (course.dirty || course.touched)" class="pt-1">
               <p *ngIf="course.errors?.['required']"  class="text-danger" >
@@ -77,7 +77,7 @@
 <!--            -->
             <div class="mb-3" >
               <label for="level" class="form-label">level</label>
-              <input type="text" readonly  [(ngModel)]="form.level" #level="ngModel"  required class="form-control" name="level" id="level" placeholder="200">
+              <input type="text" readonly  [(ngModel)]="form.level" #level="ngModel"  required class="form-control" name="level" id="level" placeholder="level">
             </div>
             <div *ngIf="level.invalid && (level.dirty || level.touched)" class="pt-1">
               <p *ngIf="level.errors?.['required']"  class="text-danger" >
@@ -87,18 +87,18 @@
 <!--            -->
             <div class="mb-3" >
               <label for="level" class="form-label">Faculty</label>
-              <input type="text" readonly  [(ngModel)]="form.faculty" #faculty="ngModel"  required class="form-control" name="level" id="faculty" placeholder="scie">
+              <input type="text" readonly  [(ngModel)]="form.faculty" #faculty="ngModel"  required class="form-control" name="Faculty" id="faculty" placeholder="Faculty">
             </div>
             <div *ngIf="faculty.invalid && (faculty.dirty || faculty.touched)" class="pt-1">
               <p *ngIf="faculty.errors?.['required']"  class="text-danger" >
-                Level  is required.
+                Faculty  is required.
               </p>
             </div>
 <!--            -->
             <!--            -->
             <div class="mb-3" >
               <label for="password" class="form-label">Password</label>
-              <input type="password"  [(ngModel)]="form.password" #password="ngModel"  required class="form-control" name="faculty" id="password" placeholder="">
+              <input type="password"  [(ngModel)]="form.password" #password="ngModel"  required class="form-control" name="faculty" id="password" placeholder="password">
             </div>
             <div *ngIf="password.invalid && (password.dirty || password.touched)" class="pt-1">
               <p *ngIf="password.errors?.['required']"  class="text-danger" >

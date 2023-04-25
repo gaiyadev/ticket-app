@@ -41,7 +41,7 @@ errorMessage: string = ''
         },
         error: (error) => {
           console.log('error er', error);
-          this.errorMessage = error.statusText
+          this.errorMessage = error.error.message
           this.loading = false
         },
         complete: () => {

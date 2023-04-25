@@ -62,7 +62,6 @@ accessToken: any = ''
     this.userData.email = JSON.parse(user).email
     this.accessToken = localStorage.getItem('accessToken')
     return this.userId = JSON.parse(user).id
-
   }
 
   getWallet() {
@@ -91,7 +90,7 @@ accessToken: any = ''
     const amount =this.form.amount
     // @ts-ignore
     const handler = PaystackPop.setup({
-      key: 'pk_test_',
+      key: `${environment.paystack}`,
       email: this.userData.email,
       amount: this.form.amount * 100,
       onClose(){
