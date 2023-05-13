@@ -5,7 +5,12 @@
     </div>
     <div class="col-md-8">
       <h3 class="mt-5 text-lg-start">All Students</h3>
-      <a  routerLink="/add-student" type="button" class="btn btn-primary text-white mb-5" style="color: #08A7FD; float: right">Add Student</a>
+      <a  routerLink="/add-student" type="button" class="btn btn-primary text-white mb-5" style="color: #08A7FD; float: right">Add Student</a> &nbsp;  &nbsp;
+      <br>
+      <form (ngSubmit)="onSubmit()" #fileUploadForm="ngForm">
+        <input type="file" name="file" (change)="onFileSelected($event)">
+        <button type="submit">Upload</button>
+      </form>
 
       <div style="width: 50%; margin: auto">
         <ng-template [ngIf]="successMessage">
