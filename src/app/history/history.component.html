@@ -31,7 +31,8 @@
             <td>{{book.uniqueId}}</td>
             <td>{{book.book.createdAt | date}}</td>
             <td>
-              <button class="btn btn-primary btn-sm" (click)="viewTicket(book.id)" type="button">View</button> </td>
+              <button class="btn btn-primary btn-sm" (click)="viewTicket(book.id)" type="button">View</button> </td> <td>
+              <button class="btn btn-primary btn-sm" (click)="Reschedule(book.id)" type="button">Reschedule</button> </td>
           </tr>
           </tbody>
         </table>

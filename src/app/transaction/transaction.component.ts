@@ -52,8 +52,8 @@ getTransactions(id: any) {
   this.http.get(`${environment.baseUrl}/wallets/transactions/${id}`)
     .subscribe({
       next: (response) => {
-        console.log(response)
         this.transactions = response
+        localStorage.setItem('transNumber', this.transactions.length)
         // this.loading = false
         // this.errorMessage = ''
         // alert('Added successfully')

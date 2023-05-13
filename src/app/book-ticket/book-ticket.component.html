@@ -21,7 +21,7 @@
             <li class="list-group-item"><span>From</span>: &nbsp; {{book.from}}</li>
             <li class="list-group-item"><span>To</span>:  &nbsp;{{book.to}}</li>
             <li class="list-group-item"><span>Time</span>:  &nbsp;{{book.time}}</li>
-            <li class="list-group-item"> <span>Number of seat: &nbsp;</span> <input class="seat-number"  [(ngModel)]="seat_number" required  name="seat_number" id="seat_number" placeholder="Number of seat" type="number"> </li>
+            <li class="list-group-item"> <span>Number of seat: &nbsp;</span> <input class="seat-number"  [(ngModel)]="seat_number" max="3" required  name="seat_number" id="seat_number" placeholder="Number of seat" type="number"> </li>
             <li class="list-group-item"><span>Total Price</span>:  &nbsp;&#8358;{{+book.price * +seat_number}}</li>
           </ul>
           <div class="mt-3">

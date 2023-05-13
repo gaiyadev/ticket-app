@@ -31,4 +31,10 @@ export class DashboardService {
     return this.http.get<any>(`${environment.baseUrl}/wallets/${id}`);
 
   }
+
+  getStats(id: number) : Observable<any>{
+    console.log(id, 'ddd')
+    return this.http.get<any>(`${environment.baseUrl}/tickets/app-stats/${id}`);
+
+  }
 }

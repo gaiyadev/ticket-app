@@ -4,14 +4,19 @@
       <app-side-nav></app-side-nav>
     </div>
     <div class="col-md-8" >
-      <div class="card">
+      <div class="card" id="pdfTable" #pdfTable>
         <div class="card-header">
           Booking Details
         </div>
+        <br>
         <div class="card-body">
           <h5 class="card-title">Booking Confirmation for {{uniqueId }}</h5>
           <p class="card-text">Thank you for booking with us!</p>
+          <br>
           <ul class="list-group list-group-flush">
+            <li class="list-group-item"><span>FulName: &nbsp;</span> {{userData.firstName}} {{userData.lastName}}</li>
+            <li class="list-group-item"><span>Department Name: &nbsp;</span> {{userData.department}} </li>
+            <li class="list-group-item"><span>Email Address: &nbsp;</span> {{userData.email}} </li>
             <li class="list-group-item"><span>Book date: &nbsp;</span> {{book.createdAt | date}} </li>
             <li class="list-group-item"><span>From</span>: &nbsp; {{book.from}}</li>
             <li class="list-group-item"><span>To</span>:  &nbsp;{{book.to}}</li>
@@ -20,7 +25,7 @@
             <li class="list-group-item"><span>Number of Seats</span>:  &nbsp;{{seat_number}}</li>
           </ul>
           <div class="mt-3">
-            <button type="submit" class="btn btn-primary">Download</button>
+            <button type="submit" (click)="downloadAsPDF()" class="btn btn-primary">Export To PDF</button>
           </div>
         </div>
       </div>

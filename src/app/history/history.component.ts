@@ -56,4 +56,7 @@ viewTicket(id: number){
     this.router.navigate([`receipt/${id}`]).then(r => console.log('dd'));
   }
 
+  Reschedule(id: number) {
+    return
+  }
 }

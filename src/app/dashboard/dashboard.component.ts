@@ -22,9 +22,13 @@ export class DashboardComponent implements OnInit {
     this.totalTickets()
     this.activeUser()
     // this.getWallet(this.userId)
+    this.getUserId()
+    this.getStats(this.userId)
+    this.getTrans()
   }
   userId: any ='';
   walletBalance: any= 0
+
   getUserId() {
     const user: any = localStorage.getItem('appData')
     return this.userId = JSON.parse(user).id
@@ -35,6 +39,9 @@ export class DashboardComponent implements OnInit {
 students: any = ''
 activeUsers: any = ''
 tickets: any = ''
+  ticketBook: any = ''
+  trans: any = ''
+
 
   isAdmin(): any{
     const user: any = localStorage.getItem('appData')
@@ -124,8 +131,6 @@ getWallet(id: number){
   this.dashboardService.getWallet(id)
     .subscribe({
       next: (response) => {
-        // this.walletBalance = response.balance
-        console.log("ssss",response)
         this.loading = false
       },
       error: (error) => {
@@ -136,5 +141,29 @@ getWallet(id: number){
         console.log('Done fetching data')
       }
     });
+}
+
+  getStats(id: number){
+  this.dashboardService.getStats(id)
+    .subscribe({
+      next: (response) => {
+        this.walletBalance = response.walletBalance
+        this.ticketBook = response.ticketBook
+        // this.trans = response.transactions
+        this.loading = false
+      },
+      error: (error) => {
+        this.loading = false
+      },
+      complete: () => {
+        this.loading = false
+        console.log('Done fetching data')
+      }
+    });
+}
+
+getTrans () {
+  this.trans = localStorage.getItem('transNumber')
+  console.log(this.trans)
 }
 }
