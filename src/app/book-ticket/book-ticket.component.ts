@@ -96,6 +96,8 @@ export class BookTicketComponent implements OnInit {
     const id =this.userId
     const amount =this.form.amount
     // @ts-ignore
+    const data = {bookId: this.book.id, userId: this.userId, amount: (Number(this.book.price) * Number(this.seat_number)), seatNumber: this.seat_number}
+    // @ts-ignore
     const handler = PaystackPop.setup({
       key: `${environment.paystack}`,
       email: this.userData.email,
@@ -104,10 +106,14 @@ export class BookTicketComponent implements OnInit {
         alert('Window closed.');
       },
       callback(response:any){
-      //   fetch(`${environment.baseUrl}/wallets/add-fund/${id}/${amount}`).then(()=>{
-      //     location.reload()
-      //     // this.getWallet()
-      //   })
+        fetch(`${environment.baseUrl}/tickets/pay/with-card/${JSON.stringify(data)}`, {
+        })
+          .then(response => response.json())
+          .then(data => {
+            console.log(data)
+              window.open(`receipt/${data.id}`)
+          })
+          .catch(error => console.error(error));
        }
     });
     handler.openIframe()
