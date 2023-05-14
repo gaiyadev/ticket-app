@@ -49,7 +49,7 @@
           <td>{{student. course}}</td>
           <td>{{student. faculty}}</td>
           <td>{{student. level}}L</td>
-          <td>{{student. isActive}}</td>
+          <td>{{student.isActive === true ? 'Active' : 'Not active'}}</td>
           <td>{{student. createdAt | date}}L</td>
           <td>
             <button class="btn btn-primary btn-sm" type="button" (click)="deleteStudent(student.id)" >Delete</button>
