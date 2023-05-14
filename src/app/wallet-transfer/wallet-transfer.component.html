@@ -1,0 +1,48 @@
+<div  class="container-fluid" >
+  <div class="row" >
+    <div class="col-md-4">
+      <app-side-nav></app-side-nav>
+    </div>
+    <div class="col-md-4" >
+      <div class="card-body" style="margin-left: 90px">
+        <h3 class="mt-5"> Send Money </h3>
+        <br>
+        <h4 class="text-danger text-center"> {{ errorMessage ? errorMessage :'' }} </h4>
+        <ng-template [ngIf]="successMessage">
+          <div class="alert alert-success" role="alert">
+            {{ successMessage ? successMessage :'' }}
+          </div>
+        </ng-template>
+        <div style="width: 50%; margin: auto">
+        </div>
+        <form (ngSubmit)="walletTransfer()" #myForm = 'ngForm'>
+<!--          <h5 class="mb-3 mt-0 mb-5">Send Money</h5>-->
+          <div>
+            <input type="number"   [(ngModel)]="form.amount" #amount="ngModel"  required class="form-control" name="amount" id="amount" placeholder="Amount">
+          </div>
+          <!--            -->
+          <div *ngIf="amount.invalid && (amount.dirty || amount.touched)" class="pt-1">
+            <p *ngIf="amount.errors?.['required']"  class="text-danger" >
+              amount is required.
+            </p>
+          </div>
+<!--          -->
+          <br>
+          <div>
+            <input type="text"   [(ngModel)]="form.accountId" #accountId="ngModel"  required class="form-control" name="accountId" id="accountId" placeholder="Wallet ID">
+          </div>
+          <!--            -->
+          <div *ngIf="accountId.invalid && (accountId.dirty || accountId.touched)" class="pt-1">
+            <p *ngIf="accountId.errors?.['required']"  class="text-danger" >
+              accountId is required.
+            </p>
+          </div>
+          <!--      btn-->
+          <button type="submit" [disabled]="myForm.form.invalid"  name="submit" class="btn btn-primary custom-btn btn-block mt-3"> {{ loading ? 'Sending' : 'Send Money'}}  </button>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div>
+</div>

@@ -24,6 +24,7 @@ import { BookTicketComponent } from './book-ticket/book-ticket.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { RecieptComponent } from './reciept/reciept.component';
 import { AllBookingsComponent } from './all-bookings/all-bookings.component';
+import { WalletTransferComponent } from './wallet-transfer/wallet-transfer.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { AllBookingsComponent } from './all-bookings/all-bookings.component';
     BookTicketComponent,
     TransactionComponent,
     RecieptComponent,
-    AllBookingsComponent
+    AllBookingsComponent,
+    WalletTransferComponent
   ],
   imports: [
     BrowserModule,
