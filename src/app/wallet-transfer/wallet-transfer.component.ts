@@ -39,7 +39,7 @@ form = {
           console.log('response')
           this.loading = false
           this.errorMessage = ''
-          this.successMessage = 'Send successfully'
+          this.successMessage = 'Sent successfully'
           // this.router.navigate(['/student']);
         },
         error: (error) => {

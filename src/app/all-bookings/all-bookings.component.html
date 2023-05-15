@@ -6,8 +6,12 @@
     <div class="col-md-8" >
       <div class="card-body" style="margin-left: -200px">
         <h3 class="mt-5"> All Book Tickets </h3>
-        <div style="width: 50%; margin: auto">
-          <input type="text" width="300px"    required class="form-control input-group-sm" name="regNumber" id="regNumber" placeholder="Search">
+        <div style="width: 40%; margin: auto">
+          <form (ngSubmit)="onSubmit(form)">
+            <input type="text" width="300px" [(ngModel)]="form.regNumber"  class="form-control input-group-sm" name="regNumber" id="regNumber" placeholder="Search Booking">
+            <br>
+            <button class="btn-primary btn" type="submit">Search</button>
+          </form>
         </div>
         <table class="table mt-5 ticket-body" >
           <thead>

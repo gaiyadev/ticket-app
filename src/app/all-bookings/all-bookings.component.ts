@@ -52,7 +52,35 @@ export class AllBookingsComponent implements OnInit {
         }
       });
   }
+
+form: any ={
+  regNumber: ''
+
+}
+  onSubmit(form:any) {
+    if(!this.form.regNumber) {
+     return  alert('Type the booking ID')
+    }
+    console.log(this.form.regNumber)
+    this.loading = true
+    this.http.get<any>(`${environment.baseUrl}/tickets/ticket/validate?id=${this.form.regNumber}`)
+      .subscribe({
+        next: (response) => {
+          this.loading = false
+          this.router.navigate([`receipt/${response.id}`]).then(r => console.log('dd'));
+        },
+        error: (error) => {
+          console.log('error er', error.error.message);
+          this.loading = false
+          return alert(error.error.message)
+        },
+        complete: () => {
+          this.loading = false
+          console.log('Done fetching data')
+        }
+      });
+  }
   // viewTicket(id: number){
-  //   this.router.navigate([`receipt/${id}`]).then(r => console.log('dd'));
+  //
   // }
 }

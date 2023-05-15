@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   baseUrl: 'http://localhost:3000',
-  paystack: 'pk_test_9f7bdbc7b70c95991b8cb0bec7a6dae88de69278'
+  paystack: 'pk_test_2ef5bda74696d098e538d73157370e69ac26ab9f'
+  // paystack: 'pk_test_9f7bdbc7b70c95991b8cb0bec7a6dae88de69278'
 };
 
 /*
