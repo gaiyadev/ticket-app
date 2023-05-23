@@ -69,6 +69,7 @@ accessToken: any = ''
     this.walletService.getWallet(this.userId)
       .subscribe({
         next: (response) => {
+          console.log('response>>>', response)
           this.walletBalance = response.balance
           this.walletId = response.walletId
           this.loading = false
